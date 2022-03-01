@@ -1,0 +1,21 @@
+mixin listMenu(goodsData)
+    li.menu__list
+        a.menu__link(href=goodsData.href) #{goodsData.text}
+
+header.header
+    .container
+        .header__top
+            .logo
+                a.logo-link(href="#") Header / Logo
+            .header__content
+                h1.header__title-main #{page_meta.h1}
+                h2.header__title #{page_meta.title}
+        .header__menu
+            nav.menu
+                ul.menu__lists
+                    each menuLink in nav
+                        +listMenu(menuLink)
+
+
+
+

@@ -1,0 +1,31 @@
+mixin socialIcon(image, alt)
+    a.footer__social-link(href="#")
+        img(src=image alt=alt)
+
+
+footer.footer
+    .container
+        .footer__content
+            .footer__inner
+                .footer__item-left
+                    .logo.footer__logo
+                        a.logo-link.footer__logo-link(href="#") Logo 
+                        span.footer__logo-company-name  / Company Name
+                    .footer__contact
+                        .footer__contact-item.footer__contact-map
+                            img(src='../images/Vector.png' alt="map")
+                            a.footer__contact-text(href="#") Company Adress: Lorem ipsum dolor sit amet 18600, Netherlands
+                        .footer__contact-item.footer__contact-phone
+                            img(src='../images/phone.png' alt="phone")
+                            span.footer__contact-text
+                                a(href="tel:+389587550000") +38 958 755-00-00
+                .footer__item-right
+                    p.footer__item-text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias soluta, provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis. Quis quo molestias repellat.
+            .footer__social-icon
+                +socialIcon("../images/social_icon__facebook.png", "facebook")
+                +socialIcon("../images/social_icon__instagram.png", "instagram")
+                +socialIcon("../images/social_icon__twitter.png", "twitter")
+                +socialIcon("../images/social_icon__youtube.png", "youtube")
+        .footer__info © 2019 - 
+            a.footer__info-link(href="#") Policy Terms and Conditions
+

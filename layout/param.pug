@@ -1,0 +1,41 @@
+-
+    let arr = [1, 2, 3, 4, 5];
+
+mixin wrapParam(title)
+    .goods__parameter
+        span.goods__parameter-name= title
+        .param(class=attributes.class)
+            block
+
+mixin checkbox(i)
+    .checkbox
+        input(class="param__input" type="checkbox" name="param" id="param__make-" + i value="value-" + i)
+        label(class="param__label" for="param__make-" + i) value #{i}
+
+mixin radio(i)
+    .radio
+        input(class="param__input param__model-input" type="radio" name="param" id="param__model-" + i value="value-" + i)
+        label(class="param__make-label param__model-label" for="param__model-" + i) value 2_#{i}
+
+mixin priceInput(param)
+    input(class="param__input-text param__price-input" type="text" placeholder= param)
+
+.goods__parameters
+    h3.goods__parameters-title 26 Results Found
+        +wrapParam("Param 1")(class='param__make')
+            each item, i in arr
+                 +checkbox(i + 1)
+
+        +wrapParam("Param 2")(class='param__model')   
+            each item, i in arr
+                if(i < 3)
+                    +radio(i + 1)
+                    
+        +wrapParam("Param 3")(class='param__price')   
+                +priceInput('min')
+                +priceInput('max')
+
+        +wrapParam("Param 4")(class='param__type')   
+            input(class="param__input-text param__type-input" type="text" placeholder="Keyword")
+
+        button.goods__parameter-btn SEARCH   

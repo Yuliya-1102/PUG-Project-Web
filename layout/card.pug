@@ -1,0 +1,22 @@
+mixin card(card)
+    a.card__item-link(href='#')
+        .card__item
+            .card__item-img
+                img.card__item-pic(src='../images/' + card.image)
+            .card__item-content
+                .card__item-main
+                    h3.card__item-title= card.title
+                    .card__item-price
+                        span.card__item-price_currency= card.price_currency
+                        span.card__item-price_price= card.price
+                p.card__item-text Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quilibero soluta itaque?
+                .card__item-parametres
+                    span.card__item-parametre.card__item-parametre_year= card.year
+                    span.card__item-parametre.card__item-parametre_km= card.mileage + ' km'
+                    span.card__item-parametre.card__item-parametre_axle= card.axle_configuration
+                    span.card__item-parametre.card__item-parametre_payload= card.payload
+                    span.card__item-parametre.card__item-parametre_gross-weight= card.gross_weight
+
+
+each card in stock
+    +card(card)

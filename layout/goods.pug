@@ -1,0 +1,23 @@
+mixin cardNav
+	.goods__card-navigation(class=attributes.class)
+		ul.goods__card-navigation_list
+			each item, key in {"prev":'<', "first": 1, "current": 2, "next": ">"}
+				li
+					a(href="#" class= key)= item
+
+mixin cardSort(name, title)
+	.goods__card-sort(class=attributes.class)
+		span.goods__card-sort_name= name
+		.goods__card-sort_option
+			.goods__card-sort_title= title
+
+
+
+.goods__card
+	h2.goods__card-title Heading Level 1
+	.goods__card-parametre
+		+cardNav()(class="goods__card-navigation_up")
+
+		+cardSort("Parameters", "Options")(class="goods__card-sort_parameters")
+		+cardSort("Sort by", "Sort options")(class="goods__card-sort_none")
+	include card
